@@ -7,6 +7,15 @@ terraform {
     }
 }
 
+terraform {
+  backend "s3" {
+    bucket = "babu-backend-oidc"
+    region = "us-east-1"
+    key = "babu/terraform.tfstate"
+    use_lockfile = "true"
+  }
+}
+
 provider "aws" {
  region = "us-east-1"
 }
